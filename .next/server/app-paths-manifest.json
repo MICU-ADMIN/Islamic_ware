@@ -1,5 +1,16 @@
 {
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/_not-found": "app/_not-found.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/attachments/page": "app/attachments/page.js",
+  "/conversations/page": "app/conversations/page.js",
+  "/contacts/page": "app/contacts/page.js",
+  "/authentication/page": "app/authentication/page.js",
+  "/errors/page": "app/errors/page.js",
+  "/groups/page": "app/groups/page.js",
+  "/pagination/page": "app/pagination/page.js",
+  "/messages/page": "app/messages/page.js",
+  "/quickstart/page": "app/quickstart/page.js",
+  "/webhooks/page": "app/webhooks/page.js",
+  "/sdks/page": "app/sdks/page.js"
 }

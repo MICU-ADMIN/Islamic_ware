@@ -1,5 +1,16 @@
 {
   "/favicon.ico/route": "/favicon.ico",
   "/_not-found": "/_not-found",
-  "/page": "/"
+  "/page": "/",
+  "/attachments/page": "/attachments",
+  "/conversations/page": "/conversations",
+  "/contacts/page": "/contacts",
+  "/authentication/page": "/authentication",
+  "/errors/page": "/errors",
+  "/groups/page": "/groups",
+  "/pagination/page": "/pagination",
+  "/messages/page": "/messages",
+  "/quickstart/page": "/quickstart",
+  "/webhooks/page": "/webhooks",
+  "/sdks/page": "/sdks"
 }

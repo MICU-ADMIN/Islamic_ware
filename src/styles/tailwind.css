@@ -1,3 +1,22 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Agrandir";
+  src: url("../../fonts/Agrandir-WideBlackItalic.otf") format("otf");
+  /* url("fonts/proxima-nova.woff") format("otf"); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+ p {
+  font-family: 'Agrandir', sans-serif;
+    font-weight: normal;
+}
+
+ h1, h2, h3 {
+  font-family: 'Agrandir', sans-serif;
+    font-weight: bold;
+}

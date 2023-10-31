@@ -12,13 +12,13 @@ function Testimonial() {
         <StarRating />
       </div>
       <blockquote className="mt-2">
-        <p className="font-display text-xl font-medium text-slate-900">
+        <p className="text-xl === text-slate-900">
           “This method of designing icons is genius. I wish I had known this
           method a lot sooner.”
         </p>
       </blockquote>
-      <figcaption className="mt-2 text-sm text-slate-500">
-        <strong className="font-semibold text-blue-600 before:content-['—_']">
+      <figcaption className="font-secondary mt-2 text-sm text-slate-500">
+        <strong className="font-secondary font-semibold text-blue-600">
           Stacey Solomon
         </strong>
         , Founder at Retail Park
@@ -39,8 +39,8 @@ export function Hero() {
               patternTransform="translate(112 64)"
             />
           </div>
-          <div className="relative z-10 mx-auto flex w-64 rounded-xl bg-slate-600 shadow-xl md:w-80 lg:w-auto">
-            <Image className="w-full" src={coverImage} alt="" priority />
+          <div className="relative z-10 mx-auto flex w-64 rounded-xl bg-inherit md:w-80 lg:w-auto">
+            <img className="w-full shadow-inner " src={'https://firebasestorage.googleapis.com/v0/b/islamicware-c2616.appspot.com/o/symbol_82%20Background%20Removed.svg?alt=media&token=f6abeb15-eeed-4f10-b5b1-26ea9aac3c21&_gl=1*h4e5f9*_ga*MjcxNTk1NzA0LjE2OTg3MDYyMTM.*_ga_CW55HF8NVT*MTY5ODcxOTU5OC4zLjEuMTY5ODcyMDA2MC40My4wLjA.'} alt=""  />
           </div>
         </div>
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">

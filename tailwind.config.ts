@@ -34,8 +34,10 @@ export default {
       fontFamily: {
         sans: 'var(--font-inter)',
         display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
+        secondary: ['Agrandir', ...defaultTheme.fontFamily.sans]
       },
     },
   },
   plugins: [],
 } satisfies Config
+

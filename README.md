@@ -1,11 +1,16 @@
-Turborepo Monorepo
+# Turborepo Monorepo
 
-This is a monorepo managed by Turborepo, containing several Next.js applications and packages. The monorepo is structured with the applications and packages in the apps and packages directories respectively.
-Applications
+This is a **monorepo** managed by **Turborepo**, containing several **Next.js** applications and packages. The monorepo is structured with the applications and packages in the `apps` and `packages` directories respectively.
+
+## Applications
 
 The applications included in this monorepo are:
 
-- ahadith: A Next.js website built with Tailwind CSS. It includes a changelog, hero content, and site metadata that can be customized. For more details, refer to the README in the apps/ahadith directory.
+### ahadith
+
+- **Description**: A **Next.js** website built with **Tailwind CSS**.
+- **Features**: It includes a changelog, hero content, and site metadata that can be customized.
+- **More Details**: For more details, refer to the README in the `apps/ahadith` directory.
 
 # Commit
 

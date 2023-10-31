@@ -8,7 +8,7 @@ type ButtonProps =
 
 export function Button({ className, ...props }: ButtonProps): JSX.Element {
   className = clsx(
-    "inline-flex justify-center rounded-2xl bg-blue-600 p-4 text-base font-semibold text-white hover:bg-blue-500 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:text-white/70",
+    "ui-inline-flex ui-justify-center ui-rounded-2xl ui-bg-blue-600 ui-p-4 ui-text-base ui-font-semibold ui-text-white ui-hover:bg-blue-500 ui-focus:outline-none ui-focus-visible:outline-2 ui-focus-visible:outline-offset-2 ui-focus-visible:outline-blue-500 ui-active:text-white/70",
     className
   );
 

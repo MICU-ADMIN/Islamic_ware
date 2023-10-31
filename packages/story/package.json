@@ -13,8 +13,9 @@
   "scripts": {
     "build": "tsup",
     "lint": "eslint src/",
-    "dev": "tsup --watch",
+    "dev": "node watcher.mjs",
     "storybook": "storybook dev -p 6006",
+    "watch:storybook": "onchange 'src/**/*' -- npm run storybook",
     "build-storybook": "storybook build",
     "check-types": "tsc --noEmit",
     "chromatic": "npx chromatic --project-token=chpt_38d3f12ea463e0a"
@@ -61,7 +62,8 @@
   },
   "dependencies": {
     "chokidar": "^3.5.3",
-    "fs-extra": "^11.1.1"
+    "fs-extra": "^11.1.1",
+    "onchange": "^7.1.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "ui@0.0.0"

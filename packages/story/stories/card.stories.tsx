@@ -1,12 +1,13 @@
-import React from 'react';
-import { Card } from '../src/card/card';
+import React from "react";
+import { Card } from "../src/card";
+import { EmailRegister } from "../src";
 
 export default {
-	title: 'Components/Card',
-	component: Card,
+  title: "Components/Card",
+  component: Card,
 };
 
 export const CardComponent = () => (
-	// @ts-ignore
-	<Card />
+  // @ts-ignore
+  <EmailRegister />
 );

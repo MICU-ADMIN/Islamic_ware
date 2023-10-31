@@ -1,46 +1,42 @@
-import { type Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import clsx from 'clsx'
+import glob from 'fast-glob'
+
+import { Providers } from '@/app/providers'
+import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
+import { type Metadata } from 'next'
+import { type Section } from '@/components/SectionProvider'
 
 export const metadata: Metadata = {
-  title: 'Everything Starts as a Square - Get lost in the world of icon design',
-  description:
-    'A book and video course that teaches you how to design your own icons from scratch.',
+  title: {
+    template: '%s - Protocol API Reference',
+    default: 'Protocol API Reference',
+  },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  let pages = await glob('**/*.mdx', { cwd: 'src/app' })
+  let allSectionsEntries = (await Promise.all(
+    pages.map(async (filename) => [
+      '/' + filename.replace(/(^|\/)page\.mdx$/, ''),
+      (await import(`./${filename}`)).sections,
+    ]),
+  )) as Array<[string, Array<Section>]>
+  let allSections = Object.fromEntries(allSectionsEntries)
+
   return (
-    <html
-      lang="en"
-      className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
-        inter.variable,
-      )}
-    >
-      <head>
-        <link
-          rel="preconnect"
-          href="https://cdn.fontshare.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
-        />
-      </head>
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
+        <Providers>
+          <div className="w-full">
+            <Layout allSections={allSections}>{children}</Layout>
+          </div>
+        </Providers>
+      </body>
     </html>
   )
 }

@@ -1,61 +1,82 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
-const baseStyles = {
-  solid:
-    'inline-flex justify-center rounded-md py-1 px-4 text-base font-semibold tracking-tight shadow-sm focus:outline-none',
-  outline:
-    'inline-flex justify-center rounded-md border py-[calc(theme(spacing.1)-1px)] px-[calc(theme(spacing.4)-1px)] text-base font-semibold tracking-tight focus:outline-none',
+function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"
+      />
+    </svg>
+  )
 }
 
 const variantStyles = {
-  solid: {
-    slate:
-      'bg-slate-900 text-white hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 active:bg-slate-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-slate-900',
-    blue: 'bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600',
-    white:
-      'bg-white text-blue-600 hover:text-blue-700 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-blue-50 active:text-blue-900/80 disabled:opacity-40 disabled:hover:text-blue-600',
-  },
-  outline: {
-    slate:
-      'border-slate-200 text-slate-900 hover:border-slate-300 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 active:border-slate-200 active:bg-slate-50 active:text-slate-900/70 disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:bg-transparent',
-    blue: 'border-blue-300 text-blue-600 hover:border-blue-400 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:text-blue-600/70 disabled:opacity-40 disabled:hover:border-blue-300 disabled:hover:bg-transparent',
-  },
+  primary:
+    'rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-inset dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300',
+  secondary:
+    'rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300',
+  filled:
+    'rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400',
+  outline:
+    'rounded-full py-1 px-3 text-zinc-700 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white',
+  text: 'text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-500',
 }
 
-type VariantKey = keyof typeof variantStyles
-type ColorKey<Variant extends VariantKey> =
-  keyof (typeof variantStyles)[Variant]
-
-type ButtonProps<
-  Variant extends VariantKey,
-  Color extends ColorKey<Variant>,
-> = {
-  variant?: Variant
-  color?: Color
+type ButtonProps = {
+  variant?: keyof typeof variantStyles
+  arrow?: 'left' | 'right'
 } & (
-  | Omit<React.ComponentPropsWithoutRef<typeof Link>, 'color'>
-  | (Omit<React.ComponentPropsWithoutRef<'button'>, 'color'> & {
-      href?: undefined
-    })
+  | React.ComponentPropsWithoutRef<typeof Link>
+  | (React.ComponentPropsWithoutRef<'button'> & { href?: undefined })
 )
 
-export function Button<
-  Color extends ColorKey<Variant>,
-  Variant extends VariantKey = 'solid',
->({ variant, color, className, ...props }: ButtonProps<Variant, Color>) {
-  variant = variant ?? ('solid' as Variant)
-  color = color ?? ('slate' as Color)
-
+export function Button({
+  variant = 'primary',
+  className,
+  children,
+  arrow,
+  ...props
+}: ButtonProps) {
   className = clsx(
-    baseStyles[variant],
-    variantStyles[variant][color],
+    'inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition',
+    variantStyles[variant],
     className,
   )
 
-  return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
-  ) : (
-    <Link className={className} {...props} />
+  let arrowIcon = (
+    <ArrowIcon
+      className={clsx(
+        'mt-0.5 h-5 w-5',
+        variant === 'text' && 'relative top-px',
+        arrow === 'left' && '-ml-1 rotate-180',
+        arrow === 'right' && '-mr-1',
+      )}
+    />
+  )
+
+  let inner = (
+    <>
+      {arrow === 'left' && arrowIcon}
+      {children}
+      {arrow === 'right' && arrowIcon}
+    </>
+  )
+
+  if (typeof props.href === 'undefined') {
+    return (
+      <button className={className} {...props}>
+        {inner}
+      </button>
+    )
+  }
+
+  return (
+    <Link className={className} {...props}>
+      {inner}
+    </Link>
   )
 }

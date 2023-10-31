@@ -15,7 +15,6 @@
     "lint": "eslint src/",
     "dev": "node watcher.mjs",
     "storybook": "storybook dev -p 6006",
-    "watch:storybook": "onchange 'src/**/*' -- npm run storybook",
     "build-storybook": "storybook build",
     "check-types": "tsc --noEmit",
     "chromatic": "npx chromatic --project-token=chpt_38d3f12ea463e0a"

@@ -584,7 +584,8 @@ export default function Example() {
           </div>
           {/* uncomment soon */}
           {/* CTA section */}
-          <div className="relative mt-24 sm:mt-32 sm:py-16">
+          <EmailRegister />
+          {/* <div className="relative mt-24 sm:mt-32 sm:py-16">
             <div aria-hidden="true" className="hidden sm:block">
               <div className="absolute inset-y-0 left-0 w-1/2 rounded-r-3xl bg-gray-50" />
               <svg
@@ -647,7 +648,7 @@ export default function Example() {
                 <EmailRegister />
               </div>
             </div>
-          </div>
+          </div> */}
         </main>
       </div>
 

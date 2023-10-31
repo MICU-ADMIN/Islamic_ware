@@ -1,8 +1,5 @@
-// import Image from "next/image";
 import { Button } from "../button/button";
 import { Container } from "../extra_components/container";
-// The code doesnt like images use svg
-// import background from "../extra_components/images/background-newsletter.jpg";
 
 function ArrowRightIcon(
   props: React.ComponentPropsWithoutRef<"svg">
@@ -27,42 +24,42 @@ export function EmailRegister(): JSX.Element {
       <Container>
         <div
           style={{ borderRadius: 50 }}
-          className="relative -mx-4 overflow-hidden bg-indigo-50 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-5xl md:px-16 xl:px-24 xl:py-36"
+          className="relative ui-mx-4 overflow-hidden ui-bg-indigo-50 ui-px-4 ui-py-20 sm:ui-mx-6 sm:ui-px-6 md:ui-mx-0 md:ui-rounded-5xl md:ui-px-16 xl:ui-px-24 xl:ui-py-36"
         >
           {/* <img
-            className="absolute left-1/2 top-0 translate-x-[-10%] translate-y-[-45%] lg:translate-x-[-32%]"
+            className="ui-absolute ui-left-1/2 ui-top-0 ui-translate-x-[-10%] ui-translate-y-[-45%] lg:ui-translate-x-[-32%]"
             src={background}
             alt=""
             width={919}
             height={1351}
             // unoptimized
           /> */}
-          <div className="relative mx-auto grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
+          <div className="relative ui-mx-auto ui-grid ui-max-w-2xl ui-grid-cols-1 ui-gap-x-32 ui-gap-y-14 xl:ui-max-w-none xl:ui-grid-cols-2">
             <div>
-              <p className="font-semibold bold text-4xl font-medium tracking-tighter text-blue-900 sm:text-5xl">
+              <p className="ui-font-semibold ui-bold ui-text-4xl ui-font-medium ui-tracking-tighter ui-text-blue-900 sm:ui-text-5xl">
                 Stay up to date
               </p>
-              <p className=" mt-4 text-lg tracking-tight text-blue-900">
+              <p className="ui-mt-4 ui-text-lg ui-tracking-tight ui-text-blue-900">
                 Get updates on all of our events and be the first to get
                 notified when tickets go on sale.
               </p>
             </div>
             <form>
-              <h3 className="text-lg font-semibold tracking-tight text-blue-900">
+              <h3 className="ui-text-lg ui-font-semibold ui-tracking-tight ui-text-blue-900">
                 Sign up to our newsletter <span aria-hidden="true">&darr;</span>
               </h3>
-              <div className="mt-5 flex rounded-3xl bg-white py-2.5 pr-2.5 shadow-xl shadow-blue-900/5 focus-within:ring-2 focus-within:ring-blue-900">
+              <div className="ui-mt-5 ui-flex ui-rounded-3xl ui-bg-white ui-py-2.5 ui-pr-2.5 ui-shadow-xl ui-shadow-blue-900/5 ui-focus-within:ring-2 ui-focus-within:ring-blue-900">
                 <input
                   type="email"
                   required
                   placeholder="Email address"
                   aria-label="Email address"
-                  className="-my-2.5 flex-auto bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
+                  className="ui-my-2.5 ui-flex-auto ui-bg-transparent ui-pl-6 ui-pr-2.5 ui-text-base ui-text-slate-900 ui-placeholder-text-slate-400 ui-focus:ui-outline-none"
                 />
                 <Button type="submit">
-                  <span className="sr-only sm:not-sr-only">Sign up today</span>
-                  <span className="sm:hidden">
-                    <ArrowRightIcon className="h-6 w-6" />
+                  <span className="ui-sr-only sm:ui-not-sr-only">Sign up today</span>
+                  <span className="sm:ui-hidden">
+                    <ArrowRightIcon className="ui-h-6 ui-w-6" />
                   </span>
                 </Button>
               </div>

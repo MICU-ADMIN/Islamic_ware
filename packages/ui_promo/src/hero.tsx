@@ -43,8 +43,7 @@ export function Hero() {
             <img
               alt="logo"
               className="ui-w-full"
-              src="https://firebasestorage.googleapis.com/v0/b/islamicware-c2616.appspot.com/o/symbol_82%20Background%20Removed.svg?alt=media&token=f6abeb15-eeed-4f10-b5b1-26ea9aac3c21&_gl=1*yvl62e*_ga*MjcxNTk1NzA0LjE2OTg3MDYyMTM.*_ga_CW55HF8NVT*MTY5OTQ1MDQzNy43LjEuMTY5OTQ1MDQ1OS4zOC4wLjA."
-              // priority
+              src="https://firebasestorage.googleapis.com/v0/b/islamicware-c2616.appspot.com/o/symbol_82%20Background%20Removed.svg?alt=media&token=f6abeb15-eeed-4f10-b5b1-26ea9aac3c21&_gl=1*yvl62e*_ga*MjcxNTk1NzA4LjE2OTg3MDYyMTM.*_ga_CW55HF8NVT*MTY5OTQ1MDQ0My4zOC4wLjA."
             />
           </div>
         </div>
@@ -81,9 +80,9 @@ export function Hero() {
               </Button>
 
               {/* <Button href="#free-chapters">Get sample chapter</Button>
-              <Button href="#pricing" variant="outline">
-                Buy book
-              </Button> */}
+          <Button href="#pricing" variant="outline">
+            Buy book
+          </Button> */}
             </div>
           </div>
         </div>

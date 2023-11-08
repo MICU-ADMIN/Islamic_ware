@@ -8,16 +8,16 @@ Authenticated with Chromatic
     → Using project token '****************3e0a'
 Retrieving git information
 Retrieved git information
-    → Commit '0b7789f' on branch 'main'; no ancestor found
+    → Commit '32781a0' on branch 'main'; found 1 parent build
 Collecting Storybook metadata
 Collected Storybook metadata
     → Storybook 7.5.2 for React; using the @storybook/react-webpack5 builder (7.5.2); supported addons found: Links, Essentials, Interactions, A11y
 Initializing build
 Initialized build
-    → Build 3 initialized
+    → Build 4 initialized
 Building your Storybook
-    → Running command: pnpm run build-storybook --output-dir /var/folders/xg/l4wnvsz14hn7vs848n6g4b0c0000gn/T/chromatic--11754-HnlTsutGmIrt
-Storybook built in 8 seconds
+    → Running command: pnpm run build-storybook --output-dir /var/folders/xg/l4wnvsz14hn7vs848n6g4b0c0000gn/T/chromatic--18682-4EkfsXWD6IFe
+Storybook built in 21 seconds
     → View build log at /Users/hossam/Documents/GitHub/Islamic_ware/packages/story/build-storybook.log
 Publish your built Storybook
     → Validating Storybook files
@@ -25,47 +25,52 @@ Publishing your built Storybook
     → Retrieving target location
     → Starting publish
     → [                    ] 1%
-    → [==                  ] 8%
-    → [===                 ] 16%
-    → [=======             ] 36%
-    → [========            ] 39%
+    → [==                  ] 10%
+    → [===                 ] 17%
+    → [=====               ] 26%
+    → [========            ] 38%
+    → [========            ] 41%
     → [========            ] 42%
     → [=========           ] 45%
-    → [===========         ] 53%
+    → [==========          ] 51%
     → [===========         ] 54%
     → [===========         ] 55%
-    → [===========         ] 56%
     → [===========         ] 57%
-    → [============        ] 59%
-    → [============        ] 61%
+    → [============        ] 58%
+    → [============        ] 60%
     → [============        ] 62%
+    → [=============       ] 63%
     → [=============       ] 65%
-    → [=============       ] 67%
-    → [==============      ] 69%
-    → [==============      ] 72%
-    → [===============     ] 75%
-    → [================    ] 79%
-    → [================    ] 82%
-    → [==================  ] 90%
-    → [==================  ] 92%
+    → [=============       ] 66%
+    → [==============      ] 70%
+    → [==============      ] 71%
+    → [===============     ] 76%
+    → [=================   ] 86%
+    → [==================  ] 88%
+    → [==================  ] 91%
     → [=================== ] 96%
+    → [=================== ] 97%
     → [====================] 98%
+    → [====================] 99%
     → [====================] 100%
 Publish complete in 8 seconds
-    → View your Storybook at https://653a784f1b81f7fbe0439537-droghzghqf.chromatic.com
+    → View your Storybook at https://653a784f1b81f7fbe0439537-bbiflgbtox.chromatic.com
 Verifying your Storybook
     → This may take a few minutes
-Started build 3
-    → View build details at https://www.chromatic.com/build?appId=653a784f1b81f7fbe0439537&number=3
-Running 1 test
+Started build 4
+    → View build details at https://www.chromatic.com/build?appId=653a784f1b81f7fbe0439537&number=4
+Running 6 tests
     → This may take a few minutes
 ℹ Speed up Continuous Integration
 Your project is linked to GitHub so Chromatic will report results there.
 This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
 Read more here: https://www.chromatic.com/docs/cli#chromatic-options
-    → [====================] 1/1  EmailRegister › Email Register Component 
-✖ Found 1 visual change: Review the changes at https://www.chromatic.com/build?appId=653a784f1b81f7fbe0439537&number=3
-
-ℹ For CI/CD use cases, this command failed with exit code 1
-Pass --exit-zero-on-changes to succeed this command regardless of changes.
-Pass --auto-accept-changes to succeed and automatically accept any changes.
+    → [===                 ] 1/6  Card › Card Component 
+    → [=======             ] 2/6  EmailRegister › Email Register Component 
+    → [==========          ] 3/6  SideBar › Side Bar Component 
+    → [=============       ] 4/6  Hero › Hero Component 
+    → [=================   ] 5/6  EmailRegister › Email Register Component 
+    → [====================] 6/6  Avalanche › Email Register Component 
+✖ Encountered 1 build error: failing with exit code 2
+Pass --allow-console-errors to succeed this command regardless of runtime build errors.
+ℹ Review the errors at https://www.chromatic.com/build?appId=653a784f1b81f7fbe0439537&number=4

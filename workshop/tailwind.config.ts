@@ -7,4 +7,4 @@ const config: Pick<Config, "presets"> = {
   presets: [sharedConfig],
 };
 
-export default config;
+export default config; 
